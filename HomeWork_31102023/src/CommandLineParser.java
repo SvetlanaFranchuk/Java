@@ -41,6 +41,7 @@ public class CommandLineParser {
                 throw new IllegalArgumentException("");
         } catch (IllegalArgumentException e) {
             System.out.println("The key for dateType is not correct");
+            return false;
         } catch (NullPointerException e) {
             System.out.println("Data type is empty");
             return false;
