@@ -1,12 +1,31 @@
-import exceptions.IllegalArgumentException;
-import exceptions.NullPointerException;
+import exceptions.CommandLineParserException;
+import parser.CommandLineParser;
 
 public class Main {
-    public static void main(String[] args) throws NullPointerException, IllegalArgumentException {
-        Setting setting = CommandLineParser.parser(args);
+    public static void main(String[] args) throws CommandLineParserException {
+        try {CommandLineParser.parser(args);
+        }catch (CommandLineParserException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
-//1 Напишите класс CommandLineParser. Парсер должен принять аргументы командной строки, переданных в программу
+
+//Что можно улучшить:
+//1 Класс setting.Setting можно сделать record или сделать поля финальными и использовать конструктор вместо сеттеров.
+//2 Имя поля ListNextFile должно быть с маленькой буквы. Раз у Вас есть конструктор, то инициализацию полей sortMode и
+// ListNextFile значениями по умолчанию лучше было сделать в нём. Если откажетесь от сеттеров, можно оставить, как есть.
+//3 Классы parser.CommandLineParser и Settings должны быть в отдельных от Main пакетах/
+//4 Давать своим классам имена стандартных классов - плохая практика.
+// Переименуйте IllegalArgumentException и NullPointerException. Вообще достаточно одного проверяемого исключения.
+// Его можно назвать CommandLineParserException, например. В основной программе сразу будет понятно,
+// что если поймали такое исключение, то ошибка на этапе парсинга.
+// В реальных программов таких этапов может быть много, и на каждый нужно адекватно отреагировать.
+//5 В основной программе отловите исключение парсера, выведите в консоль сообщение об ошибке парсинга и причину ошибки.
+
+
+
+
+//1 Напишите класс parser.CommandLineParser. Парсер должен принять аргументы командной строки, переданных в программу
 // и превратить их в экземпляр класса настройки некой сортировки по следующим правилам:
 //a. режим сортировки (-a или -d), необязательный, по умолчанию сортируем по возрастанию;
 //b. тип данных (-s или -i), обязательный;
