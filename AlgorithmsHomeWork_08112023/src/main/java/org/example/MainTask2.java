@@ -8,7 +8,7 @@ public class MainTask2 {
 
     public static int sumCycle(int n, int m){
         int result=0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = m; i <= n; i+=m) {
             if(i%m==0) result +=i;
         }
         return result;
