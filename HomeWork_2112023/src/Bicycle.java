@@ -8,12 +8,12 @@ import java.util.Locale;
  */
 public class Bicycle {
 
-    private SteeringWheel steeringWheel;
-    private Saddle saddle;
-    private Frame frame;
-    private Gear gear;
-    private Wheel wheel1;
-    private Wheel wheel2;
+    private final SteeringWheel steeringWheel;
+    private final Saddle saddle;
+    private final Frame frame;
+    private final Gear gear;
+    private final Wheel wheel1;
+    private final Wheel wheel2;
 
     public Bicycle(SteeringWheel steeringWheel, Saddle saddle, Frame frame, Gear gear, Wheel wheel1, Wheel wheel2) {
         this.steeringWheel = steeringWheel;
@@ -121,8 +121,8 @@ public class Bicycle {
      * class for creating a Steering wheel
      */
     static class SteeringWheel extends PartOfBicycle {
-        public SteeringWheel(int marginSafety) {
-            super(PartBicycle.STEERING_WHEEL, marginSafety, 1);
+        public SteeringWheel() {
+            super(PartBicycle.STEERING_WHEEL, 15, 1);
         }
     }
 
@@ -130,8 +130,8 @@ public class Bicycle {
      * class for creating a Saddle
      */
     static class Saddle extends PartOfBicycle {
-        public Saddle(int marginSafety) {
-            super(PartBicycle.SADDLE, marginSafety, 2);
+        public Saddle() {
+            super(PartBicycle.SADDLE, 30, 2);
         }
     }
 
@@ -139,8 +139,8 @@ public class Bicycle {
      * class for creating a frame
      */
     static class Frame extends PartOfBicycle {
-        public Frame(int marginSafety) {
-            super(PartBicycle.FRAME, marginSafety, 3);
+        public Frame() {
+            super(PartBicycle.FRAME, 20, 3);
         }
     }
 
@@ -148,8 +148,8 @@ public class Bicycle {
      * class for creating a gear
      */
     static class Gear extends PartOfBicycle {
-        public Gear(int marginSafety) {
-            super(PartBicycle.GEAR, marginSafety, 4);
+        public Gear() {
+            super(PartBicycle.GEAR, 17, 4);
         }
     }
 
@@ -157,11 +157,39 @@ public class Bicycle {
      * class for creating a wheel
      */
     static class Wheel extends PartOfBicycle {
-        public Wheel(int marginSafety, int id) {
-            super(PartBicycle.WHEEL, marginSafety, id);
+        public Wheel(int id) {
+            super(PartBicycle.WHEEL, 12, id);
         }
     }
+
+    /**
+     * метод, который в зависимости от переданной части велосипеда, вызывает метод расчета запаса прочности
+     * конкретной детали
+     * @param damage - степень разрушения
+     * @param partBikeId - часть велосипеда (ИД)
+     * @param bicycle - велосипед
+     */
+    public static void getDamage(int damage, int partBikeId, Bicycle bicycle){
+        if (partBikeId == 1)
+            bicycle.changeMarginSafety(bicycle.getSteeringWheel(),damage);
+        else if (partBikeId == 2)
+            bicycle.changeMarginSafety(bicycle.getSaddle(),damage);
+        else if (partBikeId == 3)
+            bicycle.changeMarginSafety(bicycle.getFrame(),damage);
+        else if (partBikeId == 4)
+            bicycle.changeMarginSafety(bicycle.getGear(),damage);
+        else if (partBikeId == 5)
+            bicycle.changeMarginSafety(bicycle.getWheel1(),damage);
+        else if (partBikeId == 6)
+            bicycle.changeMarginSafety(bicycle.getWheel2(),damage);
+    }
 }
+
+// Метод getDamage можно написать значительно короче, используя полиморфизм,
+// т.к. все части велосипеда наследуют PartOfBicycle.
+
+
+
 //Создайте класс Велосипед. Типы полей этого класса должны быть объявлены как внутренние классы
 //// (руль, седло, колесо, передачи, рама и т.д.). Каждая часть велосипеда помимо описания характеристик
 //// хранит запас прочности. Когда запас прочности равен 0, часть велосипеда ломается.

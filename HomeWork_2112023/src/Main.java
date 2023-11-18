@@ -7,20 +7,21 @@ public class Main {
         Random rnd = new Random();
 
         guessRiddle();
-        Bicycle bicycle1 = new Bicycle(new Bicycle.SteeringWheel(rnd.nextInt(10, 15)),
-                new Bicycle.Saddle(rnd.nextInt(10, 25)),
-                new Bicycle.Frame(rnd.nextInt(15, 30)),
-                new Bicycle.Gear(rnd.nextInt(8, 15)),
-                new Bicycle.Wheel(rnd.nextInt(5, 10),5),
-                new Bicycle.Wheel(rnd.nextInt(8, 17),6));
+        Bicycle bicycle1 = new Bicycle(new Bicycle.SteeringWheel(),
+                //new Bicycle.SteeringWheel(rnd.nextInt(10, 15)),
+                new Bicycle.Saddle(),
+                new Bicycle.Frame(),
+                new Bicycle.Gear(),
+                new Bicycle.Wheel(5),
+                new Bicycle.Wheel(6));
         System.out.println(bicycle1);
-        System.out.println((char)27+"[33m" + "Let`s go for a ride".toUpperCase(Locale.ROOT) + (char)27+"[0m");
+        System.out.println((char) 27 + "[33m" + "Let`s go for a ride".toUpperCase(Locale.ROOT) + (char) 27 + "[0m");
         System.out.println();
         do {
-            if (getMinMarginSafety(bicycle1)==0) break;
-            Obstacles.createObstacle(bicycle1);
+            if (getMinMarginSafety(bicycle1) == 0) break;
+            Obstacle.createObstacle(bicycle1);
             Thread.sleep(1000);
-        }while (true);
+        } while (true);
 
         System.out.println();
         System.out.println("Margin safety of your bike: ");
@@ -47,10 +48,11 @@ public class Main {
 
     /**
      * метод для определения самой поврежденной части велосипеда
+     *
      * @param bicycle - велосипед
      * @return минимальное значение прочности для существующих частей велосипеда
      */
-    private static int getMinMarginSafety(Bicycle bicycle){
+    private static int getMinMarginSafety(Bicycle bicycle) {
         int[] marginSafety = new int[]{
                 bicycle.getSteeringWheel().getMarginSafety(),
                 bicycle.getSaddle().getMarginSafety(),
