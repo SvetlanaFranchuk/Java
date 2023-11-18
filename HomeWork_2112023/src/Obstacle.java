@@ -6,9 +6,9 @@ import java.util.Random;
 /**
  * utilitarian class for creating different Obstacles
  */
-public class Obstacles {
+public class Obstacle {
     //яма, бордюр, битое стекло, лужа
-    public Obstacles() {
+    private Obstacle() {
     }
 
     /**
@@ -18,8 +18,7 @@ public class Obstacles {
      * @param bicycle - велосипед
      */
     public static void createObstacle(Bicycle bicycle){
-        TypeObstacle[] obstacles = new TypeObstacle[]{TypeObstacle.POTHOLE, TypeObstacle.BORDER,
-                TypeObstacle.BROKEN_GLASS, TypeObstacle.PUDDLE};
+        TypeObstacle[] obstacles = TypeObstacle.values();
         Random rnd = new Random();
         int damage = rnd.nextInt(1,3);
         int partBikeId = rnd.nextInt(1,7);
