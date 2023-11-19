@@ -1,0 +1,5 @@
+Employee{Evered Boyd ; date of birth= 1990-12-21; position= manager}
+Employee{Bradley Colon ; date of birth= 1983-01-12; position= imageMarker}
+Employee{Jeffrey Williams ; date of birth= 1986-02-17; position= copywriter}
+Employee{Henry Bradley ; date of birth= 1994-07-14; position= marketer}
+Employee{William Sanchez ; date of birth= 1980-06-08; position= advertisingDirector}
