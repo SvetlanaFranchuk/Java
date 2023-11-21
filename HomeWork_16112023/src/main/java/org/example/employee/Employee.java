@@ -1,13 +1,14 @@
 package org.example.employee;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee {
- String name;
- String lastName;
- LocalDate birth;
- String position;
- double salary;
+public class Employee implements Serializable {
+ private String name;
+ private String lastName;
+ private LocalDate birth;
+ private String position;
+ private transient double salary;
 
     public Employee(String name, String lastName, LocalDate birth, String position, double salary) {
         this.name = name;
@@ -43,10 +44,6 @@ public class Employee {
                 "; position= " + position + "; salary= " + salary + '}';
     }
 
-    public String toStringWithoutSalary() {
-        return "Employee{" + name + " " + lastName + " ; date of birth= " + birth +
-                "; position= " + position + '}';
-    }
 }
 //Создайте класс Сотрудник с полями имя, фамилия, дата рождения, должность, заработная плата. Сериализуйте объект
 // и сохраните в файл. Поле заработной платы сериализовать не нужно, т.к. это коммерческая тайна организации.

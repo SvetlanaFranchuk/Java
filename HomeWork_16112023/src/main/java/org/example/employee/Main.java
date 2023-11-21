@@ -20,22 +20,35 @@ public class Main {
         employees.add(employee3);
         employees.add(employee4);
         employees.add(employee5);
-        try {
-            writeToFile(employees, new FileOutputStream("Employees.txt"));
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
+
+        serialization(employees,"Employees.txt");
+
+        List<Employee> deserializationEmployee = deserialization("Employees.txt");
+        for (Employee e: deserializationEmployee) {
+            System.out.println(e);
         }
 
     }
 
-    private static void writeToFile(List<Employee> list, OutputStream output) {
-        try (OutputStream output2 = new DataOutputStream(output)) {
-            for (Employee oneStr : list)
-                output2.write((oneStr.toStringWithoutSalary()+"\n").getBytes(StandardCharsets.UTF_8));
+    public static void serialization (List<Employee> employees, String fileName){
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))){
+            out.writeObject(employees);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    public static List<Employee> deserialization(String path){
+        List<Employee> employees = null;
+        try(ObjectInputStream input = new ObjectInputStream(new FileInputStream(path))) {
+            employees= (ArrayList) input.readObject();
+
+          } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return employees;
+    }
+
 }
 //Создайте класс Сотрудник с полями имя, фамилия, дата рождения, должность, заработная плата. Сериализуйте объект
 // и сохраните в файл. Поле заработной платы сериализовать не нужно, т.к. это коммерческая тайна организации.
