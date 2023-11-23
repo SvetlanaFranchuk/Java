@@ -1,0 +1,108 @@
+INFO 2023-11-23	22:35:23.517969800	Start programs
+INFO 2023-11-23	22:35:23.518904600	Read application.properties
+INFO 2023-11-23	22:35:23.585902200	Read and write environment variables
+
+Environment variables
+USERDOMAIN_ROAMINGPROFILE 	DESKTOP-LC2474E
+LOCALAPPDATA 	C:\Users\Tel-ran.de\AppData\Local
+PROCESSOR_LEVEL 	6
+USERDOMAIN 	DESKTOP-LC2474E
+FPS_BROWSER_APP_PROFILE_STRING 	Internet Explorer
+LOGONSERVER 	\\DESKTOP-LC2474E
+JAVA_HOME 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8
+SESSIONNAME 	Console
+ALLUSERSPROFILE 	C:\ProgramData
+PROCESSOR_ARCHITECTURE 	AMD64
+PSModulePath 	C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+SystemDrive 	C:
+OneDrive 	C:\Users\Tel-ran.de\OneDrive
+APPDATA 	C:\Users\Tel-ran.de\AppData\Roaming
+USERNAME 	Tel-ran.de
+ProgramFiles(x86) 	C:\Program Files (x86)
+CommonProgramFiles 	C:\Program Files\Common Files
+Path 	C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Java\apache-maven-3.9.5-bin\apache-maven-3.9.5\bin;C:\Program Files\Java\gradle-8.4-all\gradle-8.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Tel-ran.de\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.2\bin;;C:\Users\Tel-ran.de\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Tel-ran.de\AppData\Roaming\npm
+FPS_BROWSER_USER_PROFILE_STRING 	Default
+PATHEXT 	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+DriverData 	C:\Windows\System32\Drivers\DriverData
+OS 	Windows_NT
+COMPUTERNAME 	DESKTOP-LC2474E
+IntelliJ IDEA Community Edition 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.2\bin;
+PROCESSOR_REVISION 	4e03
+CommonProgramW6432 	C:\Program Files\Common Files
+ComSpec 	C:\Windows\system32\cmd.exe
+ProgramData 	C:\ProgramData
+ProgramW6432 	C:\Program Files
+HOMEPATH 	\Users\Tel-ran.de
+SystemRoot 	C:\Windows
+TEMP 	C:\Users\Tel-ran.de\AppData\Local\Temp
+HOMEDRIVE 	C:
+PROCESSOR_IDENTIFIER 	Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+USERPROFILE 	C:\Users\Tel-ran.de
+TMP 	C:\Users\Tel-ran.de\AppData\Local\Temp
+CommonProgramFiles(x86) 	C:\Program Files (x86)\Common Files
+ProgramFiles 	C:\Program Files
+PUBLIC 	C:\Users\Public
+NUMBER_OF_PROCESSORS 	4
+windir 	C:\Windows
+IntellJ IDEA 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8\bin
+=:: 	::\
+IDEA_INITIAL_DIRECTORY 	C:\Users\Tel-ran.de\Desktop
+ZES_ENABLE_SYSMAN 	1
+INFO 2023-11-23	22:35:23.624902500	Read and write system variables
+
+System variables
+java.specification.version 	17
+sun.cpu.isalist 	amd64
+sun.jnu.encoding 	Cp1252
+java.class.path 	C:\Users\Tel-ran.de\Documents\Java_Git\Java\HomeWork_21112023\target\classes
+java.vm.vendor 	Amazon.com Inc.
+sun.arch.data.model 	64
+user.variant 	
+java.vendor.url 	https://aws.amazon.com/corretto/
+user.timezone 	Europe/Berlin
+user.country.format 	DE
+java.vm.specification.version 	17
+os.name 	Windows 10
+sun.java.launcher 	SUN_STANDARD
+user.country 	GB
+sun.boot.library.path 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8\bin
+sun.java.command 	org.example.Main
+jdk.debug 	release
+sun.cpu.endian 	little
+user.home 	C:\Users\Tel-ran.de
+user.language 	en
+java.specification.vendor 	Oracle Corporation
+java.version.date 	2023-07-18
+java.home 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8
+file.separator 	\
+java.vm.compressedOopsMode 	Zero based
+line.separator 	
+
+java.vm.specification.vendor 	Oracle Corporation
+java.specification.name 	Java Platform API Specification
+user.script 	
+sun.management.compiler 	HotSpot 64-Bit Tiered Compilers
+java.runtime.version 	17.0.8+7-LTS
+user.name 	Tel-ran.de
+path.separator 	;
+os.version 	10.0
+java.runtime.name 	OpenJDK Runtime Environment
+file.encoding 	UTF-8
+java.vm.name 	OpenJDK 64-Bit Server VM
+java.vendor.version 	Corretto-17.0.8.7.1
+java.vendor.url.bug 	https://github.com/corretto/corretto-17/issues/
+java.io.tmpdir 	C:\Users\Tel-ran.de\AppData\Local\Temp\
+java.version 	17.0.8
+user.dir 	C:\Users\Tel-ran.de\Documents\Java_Git\Java\HomeWork_21112023
+os.arch 	amd64
+java.vm.specification.name 	Java Virtual Machine Specification
+sun.os.patch.level 	
+native.encoding 	Cp1252
+java.library.path 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Java\apache-maven-3.9.5-bin\apache-maven-3.9.5\bin;C:\Program Files\Java\gradle-8.4-all\gradle-8.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Tel-ran.de\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.2\bin;;C:\Users\Tel-ran.de\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Tel-ran.de\AppData\Roaming\npm;.
+java.vm.info 	mixed mode, sharing
+java.vendor 	Amazon.com Inc.
+java.vm.version 	17.0.8+7-LTS
+sun.io.unicode.encoding 	UnicodeLittle
+java.class.version 	61.0
+INFO 2023-11-23	22:35:23.651902200	Environment variables don`t contain Path1 !!!
+WARNING 2023-11-23	22:35:23.651902200	Environment variables don`t contain Path1 !!!
