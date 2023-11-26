@@ -1,6 +1,6 @@
-INFO 2023-11-23	22:35:23.517969800	Start programs
-INFO 2023-11-23	22:35:23.518904600	Read application.properties
-INFO 2023-11-23	22:35:23.585902200	Read and write environment variables
+DEBUG 2023-11-26	19:49:25.281957600	Start programs
+DEBUG 2023-11-26	19:49:25.281957600	Read application.properties
+DEBUG 2023-11-26	19:49:25.387988400	Read and write environment variables
 
 Environment variables
 USERDOMAIN_ROAMINGPROFILE 	DESKTOP-LC2474E
@@ -48,7 +48,7 @@ IntellJ IDEA 	C:\Users\Tel-ran.de\.jdks\corretto-17.0.8\bin
 =:: 	::\
 IDEA_INITIAL_DIRECTORY 	C:\Users\Tel-ran.de\Desktop
 ZES_ENABLE_SYSMAN 	1
-INFO 2023-11-23	22:35:23.624902500	Read and write system variables
+DEBUG 2023-11-26	19:49:25.430624200	Read and write system variables
 
 System variables
 java.specification.version 	17
@@ -104,5 +104,4 @@ java.vendor 	Amazon.com Inc.
 java.vm.version 	17.0.8+7-LTS
 sun.io.unicode.encoding 	UnicodeLittle
 java.class.version 	61.0
-INFO 2023-11-23	22:35:23.651902200	Environment variables don`t contain Path1 !!!
-WARNING 2023-11-23	22:35:23.651902200	Environment variables don`t contain Path1 !!!
+DEBUG 2023-11-26	19:49:25.458855200	Environment variables don`t contain Path1 !!!
