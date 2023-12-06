@@ -29,7 +29,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         realNumberOfItems++;
     }
 
-    //асимптотический анализ O(1)
+    //асимптотический анализ infinit
     //амортизированный анализ Oam(1)
     public Item sample() {
         if (realNumberOfItems > 0) {
@@ -40,7 +40,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         }
     }
 
-    //асимптотический анализ O(1)
+    //асимптотический анализ infinit
     //амортизированный анализ Oam(1)
     public Item dequeue() {
         if (realNumberOfItems > 0) {
@@ -65,7 +65,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return realNumberOfItems;
     }
 
-    //асимптотический анализ O(n)
+    //асимптотический анализ infinit
     //амортизированный анализ Oam(n)
     public Iterator<Item> iterator() {
         return new Iterator<Item>() {
