@@ -1,4 +1,4 @@
-package org.example;
+package org.example.inventoryControl;
 
 public class Product {
     private final int id;

@@ -1,4 +1,10 @@
-package org.example;
+package org.example.consumption;
+
+import org.example.inventoryControl.Product;
+import org.example.inventoryControl.Stock;
+import org.example.readProperties.Utils;
+
+import java.time.LocalTime;
 
 public class Consumer extends Thread {
     private Stock stock;
@@ -15,7 +21,8 @@ public class Consumer extends Thread {
             for (int i = 0; i < consumerCount; i++) {
                 try {
                     Product product = stock.getProduct();
-                    System.out.printf("Consumer %s take %s product%n", getName(), product.getId());
+                    System.out.printf(LocalTime.now() + "; № потока %d; тип потока %s; %s взял продукт №%s%n",
+                            Thread.currentThread().getId(), Thread.currentThread().getName(), getName(), product.getId());
                     Thread.sleep(Utils.getProperties("consumerTime"));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
