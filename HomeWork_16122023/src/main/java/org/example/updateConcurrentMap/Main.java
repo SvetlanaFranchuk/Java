@@ -10,6 +10,5 @@ public class Main {
         System.out.println(map);
         System.out.println("Измененный ConcurrentHashMap");
         System.out.println(userConcurrentMap.getChangedValueConcurrentMap(map));
-
     }
 }
