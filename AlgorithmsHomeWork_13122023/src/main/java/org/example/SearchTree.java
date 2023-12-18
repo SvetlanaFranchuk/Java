@@ -1,8 +1,6 @@
-package lesson20231213;
+package org.example;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class SearchTree {
 
@@ -12,7 +10,7 @@ public class SearchTree {
         String key;
         Integer value;
 
-//        List<Node> children;
+        //        List<Node> children;
         Node left;
         Node right;
 
@@ -29,7 +27,7 @@ public class SearchTree {
 
         while (current != null) {
             int result = key.compareTo(current.key);
-            if (result == 0) return  current.value;
+            if (result == 0) return current.value;
             else if (result < 0) current = current.left;
             else current = current.right;
         }
@@ -37,7 +35,7 @@ public class SearchTree {
     }
 
     public void add(String key, Integer value) {
-            root = add(root, key, value);
+        root = add(root, key, value);
     }
 
     private Node add(Node current, String key, Integer value) { // O(log n) if tree is balanced, O(n) if tree is not balanced
@@ -52,7 +50,7 @@ public class SearchTree {
         return current;
     }
 
-    public Iterable<String> getAllKeys(){ // O(n)
+    public Iterable<String> getAllKeys() { // O(n)
         Queue<String> queue = new LinkedList<>();
         inorder(queue, root);
         return queue;
@@ -80,7 +78,7 @@ public class SearchTree {
         return sortedData;
     }
 
-    public String getMaxKey(){ // O(log n) if tree is balanced, O(n) if tree is not balanced
+    public String getMaxKey() { // O(log n) if tree is balanced, O(n) if tree is not balanced
         Node current = root;
         while (current != null) {
             if (current.right == null) return current.key;
@@ -104,15 +102,50 @@ public class SearchTree {
     }
 
     public String searchByValueDFS(Integer value) { // O(n) TODO
+        if (root == null) return null;
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node current = stack.pop();
+            if (current.value.equals(value)) return current.key;
+            if (current.right != null) stack.push(current.right);
+            if (current.left != null) stack.push(current.left);
+        }
         return null;
     }
 
 
+    public int getHeightSearchTree(){
+        if (root == null) return 0;
+        int maxHeight = 0;
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+
+        Map<Node, Integer> heightMap = new HashMap<>();
+        heightMap.put(root, 1);
+
+        while (!stack.isEmpty()) {
+            Node current = stack.pop();
+            int currentHeight = heightMap.get(current);
+            if (current.right != null) {
+                stack.push(current.right);
+                heightMap.put(current.right, currentHeight++);
+                maxHeight = Math.max(maxHeight, currentHeight++);
+            }
+            if (current.left != null) {
+                stack.push(current.left);
+                heightMap.put(current.left, currentHeight++);
+                maxHeight = Math.max(maxHeight, currentHeight++);
+            }
+        }
+        return maxHeight;
+    }
+
     public static void main(String[] args) {
         SearchTree tree = new SearchTree();
+        tree.add("B", 30);
         tree.add("C", 10);
         tree.add("A", 20);
-        tree.add("B", 30);
         tree.add("D", 40);
         tree.add("G", 90);
 
@@ -134,6 +167,8 @@ public class SearchTree {
         System.out.println("Max key = " + tree.getMaxKey());
 
         System.out.println("searchByValueBFS: " + tree.searchByValueBFS(90));
+        System.out.println("searchByValueDFS: " + tree.searchByValueDFS(90));
+        System.out.println("getHeightSearchTree: " + tree.getHeightSearchTree());
     }
 
 }
