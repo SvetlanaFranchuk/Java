@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customer" class="customer.Customer" scope="prototype">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="Bob"/>
+        <constructor-arg index="2" value="#{T(java.time.LocalDate).now()}" type="java.time.LocalDate"/>
+        <constructor-arg index="3" value="+19138445656"/>
+        <constructor-arg index="4" value="#{null}"/>
+    </bean>
+
+    <bean id="customerEmpty" class="customer.Customer" scope="prototype"/>
+
+    <bean id="email_spam" class="service.EmailNotificationServiceImpl" scope="prototype"/>
+    <bean id="sms_spam" class="service.SmsNotificationServiceImpl" scope="prototype"/>
+
+    <bean id="notificationService" class="service.NotificationService" scope="prototype">
+        <constructor-arg ref="email_spam"/>
+        <constructor-arg ref="sms_spam"/>
+    </bean>
+</beans>
