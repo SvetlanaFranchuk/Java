@@ -1,2 +1,5 @@
-package interf;public interface NotificationService {
+package interf;
+
+public interface NotificationService {
+    void sendMessage();
 }

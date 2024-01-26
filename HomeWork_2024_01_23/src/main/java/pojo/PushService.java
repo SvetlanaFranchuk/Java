@@ -8,11 +8,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Component
-public class EmailService implements NotificationService {
+public class PushService implements NotificationService {
 
     private final Schedule schedule;
 
-    public EmailService(Schedule schedule) {
+    public PushService(Schedule schedule) {
         this.schedule = schedule;
     }
 
@@ -21,7 +21,7 @@ public class EmailService implements NotificationService {
         List<Task> urgentList = Util.getUrgentTask(schedule);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
-        System.out.println("Email message: you have next urgent task:");
+        System.out.println("Push message: you have next urgent task:");
         urgentList.forEach(t-> System.out.println(t.getTitle() + ". Start " + t.getStartDateTime().format(formatter)));
     }
 
