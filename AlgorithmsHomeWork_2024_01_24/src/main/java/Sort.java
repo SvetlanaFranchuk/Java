@@ -4,6 +4,7 @@ public class Sort {
     public static void main(String[] args) {
         int[] arr = {7,6,5,-4,3,2,1};
         System.out.println(Arrays.toString(bubbleSort(arr)));
+
         int[] arr1 = {7,56,5,-4,3,-2,1};
         System.out.println(Arrays.toString(insertionSort(arr1)));
     }
