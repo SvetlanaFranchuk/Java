@@ -24,4 +24,5 @@
         <property name="templateEngine" ref="templateEngine"/>
         <property name="viewNames" value="*"/>
     </bean>
+    <bean class="com.fasterxml.jackson.databind.ObjectMapper"/>
 </beans>
