@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        h4{
+            color: green;
+            font-size: xxx-large;
+        }
+        .textHeader{
+            color: brown;
+            font-size: xx-large;
+            font-style: italic;
+        }
+        .text{
+            color: darkblue;
+            font-size: xx-large;
+        }
+        .button{
+            font-size: x-large;
+            height: 40px;
+        }
+        #message{
+            font-size: xx-large;
+            height: 160px;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+<h4>Feedback about <i th:text="${product.getName()}">VALUE</i></h4>
+
+<p class="textHeader" th:text="'Dear '+ ${user.getName()}+', we will be grateful to you if you share your impressions of our product. Please choose your rate:'"</p>
+<hr>
+<form th:method="POST" th:action="@{/product/{id}(id=${product.getId()})}" th:object="${rate}">
+    <label class="text" for="rate5"><input id="rate5" type="radio" name="rate" th:value="5" checked />5 - Wonderful product;</label>
+    <br>
+    <label class="text" for="rate4"><input id="rate4" type="radio" name="rate" th:value="4" />4 - Great product;</label>
+    <br>
+    <label class="text" for="rate3"><input id="rate3" type="radio" name="rate" th:value="3" />3 - Good product;</label>
+    <br>
+    <label class="text" for="rate2"><input id="rate2" type="radio" name="rate" th:value="2" />2 - Normal product;</label>
+    <br>
+    <label class="text" for="rate1"><input id="rate1" type="radio" name="rate" th:value="1" />1 - Not good product;</label>
+    <br>
+    <br>
+    <br>
+    <br>
+    <textarea id="message" name="message" rows="3" cols="30" placeholder="This is the place for your message..."></textarea>
+    <br>
+    <hr>
+    <button class="button" type="submit">Submit</button>
+</form>
+
+</body>
+</html>

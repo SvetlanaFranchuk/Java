@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .product{
+            color: green;
+            font-size: xxx-large;
+        }
+        h4{
+            color: darkslateblue;
+            font-size: xx-large;cdxs
+        }
+        .feedback{
+            color: darkblue;
+            font-size: xx-large;
+            margin: 50px;
+            padding: 20px;
+        }
+        .avg{
+            color: brown;
+            font-size: x-large;
+            font-style: italic;
+        }
+        .button{
+            font-size: x-large;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<p class="product" th:text="${product.getName()}">VALUE</p>
+<p class="avg" th:text="${avgRating}">avgRating</p>
+<hr>
+
+<form th:method="GET" th:action="@{/feedback/{id}(id=${product.getId()})}">
+<button class="button" type="submit" value="${product.getId()}" >Leave feedback</button>
+</form>
+
+<h4>Reviews about <i th:text="${product.getName()}">VALUE</i> from our clients:</h4>
+<br>
+
+<div th:each="feedback : ${feedbacks}"
+     th:if="${feedback.getRate()}>0">
+    <a class="feedback"
+
+       th:text="${feedback.getUser().getName()} + '; rate: ' + ${feedback.getRate()} + '; ' + ${feedback.getMessage()}">feedback</a>
+    <hr>
+</div>
+
+</body>
+</html>
