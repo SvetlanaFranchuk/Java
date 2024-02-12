@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>User status edit</title>
+        <style>
+        .select{
+            width: 300px;
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h4>Edit user status</h4>
+            <form th:object="${users}" th:action="@{/view/editStatus}" th:method="PATCH">
+                <div>
+                    <label for="id">Select user:</label>
+                    <select class="select" id="id" name="id">
+                        <option th:each="user : ${users}"
+                                th:value="${user.id()}"
+                                th:text="${user.id() + ': ' + user.firstName() + ' ' +
+                                user.lastName() + '; current status: ' + user.status() }"></option>
+                    </select>
+                </div>
+                <div>
+                    <p>New status</p>
+                    <label for="true"><input id="true" type="radio" name="status" th:value="true" checked />active</label>
+                    <label for="false"><input id="false" type="radio" name="status" th:value="false" />not active</label>
+                </div>
+                <br>
+                <button type="submit">Update status</button>
+            </form>
+        </main>
+        <br>
+        <a href="../../">Home</a>
+    </body>
+</html>
