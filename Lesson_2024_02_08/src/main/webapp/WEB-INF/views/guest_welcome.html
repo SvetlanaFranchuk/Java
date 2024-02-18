@@ -2,10 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="ISO-8859-1">
-        <title>User profile delete</title>
+        <title>Welcome</title>
     </head>
     <body>
-        <h2>User deleted successfully</h2>
-        <a th:href="@{/users}">Go to users list</a>
+    <h2>Your order is accepted</h2>
+    <p>
+        Dear
+        <span th:text="${name}"></span>
+        , your disc is
+        <span th:text="${disc}"></span>
+    </p>
     </body>
 </html>

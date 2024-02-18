@@ -8,9 +8,9 @@
     <h2>Your order is accepted</h2>
     <p th:object="${guestDto}">
         Dear
-        <span th:text="${name}"></span>
+        <span th:text="*{name}"></span>
         , your Id is
-        <span th:text="${id}"></span>
+        <span th:text="*{id}"></span>
     </p>
     </body>
 </html>

@@ -1,2 +1,4 @@
-package org.example.dto.guest;public class GuestRegistrationForm {
+package org.example.dto.guest;
+
+public record GuestRegistrationForm (long id, String name) {
 }

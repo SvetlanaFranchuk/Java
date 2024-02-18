@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.example.dto.cuisine;
 
 import java.time.Duration;
 

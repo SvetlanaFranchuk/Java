@@ -5,8 +5,10 @@
         <title>Congratulation!</title>
     </head>
     <body>
-    <p th:
-        <h2>User edited successfully</h2>
-        <a th:href="@{/view/profile/{id}(id=${updatedUser.id})}">Go to Profile</a>
+    <select class="form-control" id="dropDownList">
+        <option value="0">select option</option>
+        <option th:each="option : ${option}" th:value="${option}"
+                th:text="${option}"></option>
+    </select>
     </body>
 </html>
