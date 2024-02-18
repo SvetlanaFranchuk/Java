@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Friend's Birthday</title>
+</head>
+<body>
+<h2>Search Friend's Birthday</h2>
+<form th:action="@{/friends/searchByName}" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <br>
+    <button type="submit">Search</button>
+</form>
+</body>
+</html>
