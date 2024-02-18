@@ -1,7 +1,7 @@
 package org.example.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.javafaker.Faker;
+//import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -45,20 +45,20 @@ public class SpringConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
-    @Bean
-    public ObjectMapper objectMapper(){
-        return new ObjectMapper();
-    }
+//    @Bean
+//    public ObjectMapper objectMapper(){
+//        return new ObjectMapper();
+//    }
 
     @Bean
     public Random random(){
         return new Random();
     }
 
-    @Bean
-    public Faker faker(){
-        return new Faker();
-    }
+//    @Bean
+//    public Faker faker(){
+//        return new Faker();
+//    }
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
