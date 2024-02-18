@@ -79,7 +79,13 @@
       <version>6.1.0-M1</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.javafaker</groupId>
+      <artifactId>javafaker</artifactId>
+      <version>1.0.2</version>
+    </dependency>
   </dependencies>
+
   <build>
     <finalName>Summary_2</finalName>
   </build>

@@ -4,10 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--    1 Create bean     -->
-    <bean id="immediateThread" class="org.example.threads.ImmediateThread"
-          init-method="immediateStart"
-          destroy-method="immediateInterrupt"
-          scope="prototype">
+    <bean id="plant" class="fabrica.Plant"
+          factory-method="produceNewPlant" scope="prototype">
 
     </bean>
 
