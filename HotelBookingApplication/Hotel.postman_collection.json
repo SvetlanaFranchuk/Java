@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "9dd91e5d-69d3-4926-9a72-fa3b12d6ee02",
+		"name": "Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32323927"
+	},
+	"item": [
+		{
+			"name": "get all available rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/booking/allAvailable?startDate=2024-02-27&endDate=2024-03-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking",
+						"allAvailable"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-02-27"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-03-28"
+						}
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "get all comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/comment/allComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"comment",
+						"allComment"
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "get all available rooms with filter by Size Room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/booking/allAvailableTypeBySize?startDate=2024-02-27&endDate=2024-03-28&typeBySize=STANDART",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking",
+						"allAvailableTypeBySize"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-02-27"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-03-28"
+						},
+						{
+							"key": "typeBySize",
+							"value": "STANDART"
+						}
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "get all available rooms with filter type by count person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/booking/allAvailableTypeByCountPerson?startDate=2024-02-29&endDate=2024-03-29&typeByCountPerson=SINGLE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking",
+						"allAvailableTypeByCountPerson"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-02-29"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-03-29"
+						},
+						{
+							"key": "typeByCountPerson",
+							"value": "SINGLE"
+						}
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "get booking by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/booking/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking",
+						"1"
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "cancel booking",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/booking/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking",
+						"2"
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "create booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\": [\r\n        2024,\r\n        3,\r\n        15\r\n    ],\r\n    \"endDate\": [\r\n        2024,\r\n        3,\r\n        17\r\n    ],\r\n    \"statusBooking\": \"NEW\",\r\n    \"bookDate\": [\r\n        2024,\r\n        2,\r\n        29\r\n    ],\r\n    \"typeByFood\": \"BB\",\r\n    \"userId\": 5,\r\n    \"roomId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"booking"
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		},
+		{
+			"name": "create comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"everething is good\"\r\n    \"user_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"comment"
+					]
+				},
+				"description": "get all available rooms"
+			},
+			"response": []
+		}
+	]
+}
